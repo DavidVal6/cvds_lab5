@@ -6,12 +6,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.faces.bean.SessionScoped;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
 @ManagedBean(name = "guessBean")
 @SessionScoped
 public class GuessBean implements Serializable{
+
+    @Autowired
+    ServiceGuess serviceG;
     public ArrayList<Integer> historial;
     private int premio;
     private String estado;
@@ -19,6 +26,7 @@ public class GuessBean implements Serializable{
     private int numeroAdivinar;
     private int numeroIntentos; 
     private int intento;
+    private int gift;
 
 
     public GuessBean(){
@@ -77,9 +85,20 @@ public class GuessBean implements Serializable{
             numeroIntentos++;
         }
    }
+
+   @Bean
+    public CommandLineRunner currentPrice() throws Exception {
+        return args -> {
+            serviceG.addConfiguration(new ConfigurationBean("Premio","100000"));
+            serviceG.getAllConfiguration().forEach(configutationB -> System.out.println(configutationB));
+            gift = Integer.parseInt(serviceG.getConfiguration("Premio").getValor());
+            restart();
+        };
+    }
+
     public void restart(){
         numeroAdivinar = random.nextInt(100);
-        premio = 100000;
+        premio = gift;
         numeroIntentos = 0;
     }
     
