@@ -1,4 +1,4 @@
-package edu.eci.cvds.servlet.backingBean;
+package edu.eci.cvds.servlet.model;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package edu.eci.cvds.servlet.backingBean;
+package edu.eci.cvds.servlet.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package edu.eci.cvds.servlet.backingBean;
+package edu.eci.cvds.servlet.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,5 @@
 
-package edu.eci.cvds.servlet.backingBean;
+package edu.eci.cvds.servlet.model;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import java.io.Serializable;

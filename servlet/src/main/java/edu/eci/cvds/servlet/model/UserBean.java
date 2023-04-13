@@ -1,4 +1,4 @@
-package edu.eci.cvds.servlet.backingBean;
+package edu.eci.cvds.servlet.model;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
